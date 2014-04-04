@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Joviansoft-android-master.iml" filepath="$PROJECT_DIR$/Joviansoft-android-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/joviansoft-android-core/joviansoft-android-core.iml" filepath="$PROJECT_DIR$/joviansoft-android-core/joviansoft-android-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/joviansoft-android-master/joviansoft-android-master.iml" filepath="$PROJECT_DIR$/joviansoft-android-master/joviansoft-android-master.iml" />
+    </modules>
+  </component>
+</project>
+

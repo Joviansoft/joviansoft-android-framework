@@ -1,0 +1,1 @@
+include ':joviansoft-android-master', ':joviansoft-android-core'
