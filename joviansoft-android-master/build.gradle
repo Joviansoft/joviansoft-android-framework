@@ -3,7 +3,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.1'
     }
 }
 repositories {
@@ -13,28 +12,20 @@ repositories {
 
 
 apply plugin: 'android'
-apply plugin: 'android-apt'
 def AAVersion = '3.0.1'
 
 
-apt {
-    arguments {
-        androidManifestFile variant.processResources.manifestFile
-        resourcePackageName 'com.joviansoft.android.master'
-    }
-}
+
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.0.1'
-
+    compileSdkVersion 20
+    buildToolsVersion '20.0.0'
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 19
+        minSdkVersion 11
+        targetSdkVersion 20
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
     }
-
     buildTypes {
         release {
             runProguard false
@@ -52,12 +43,12 @@ android {
         // simple xml fails lint checks because it references javax.xml.stream
         abortOnError false
     }
+    productFlavors {
+    }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:+'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':joviansoft-android-core')
-    apt "org.androidannotations:androidannotations:$AAVersion"
-    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    compile 'com.android.support:appcompat-v7:20.+'
 }

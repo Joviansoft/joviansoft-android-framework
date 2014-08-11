@@ -7,9 +7,10 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="C:\joviansoft\android\Joviansoft-android-master" />
-            <option value="C:\joviansoft\android\Joviansoft-android-master\joviansoft-android-core" />
-            <option value="C:\joviansoft\android\Joviansoft-android-master\joviansoft-android-master" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/joviansoft-android-core" />
+            <option value="$PROJECT_DIR$/joviansoft-android-master" />
+            <option value="$PROJECT_DIR$/joviansoft-framework-ui" />
           </set>
         </option>
       </GradleProjectSettings>

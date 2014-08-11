@@ -1,20 +1,19 @@
 package com.joviansoft.android.service;
 
-import com.joviansoft.android.client.HttpMethod;
-import com.joviansoft.android.client.JovianRequestListener;
+import com.joviansoft.android.core.net.HttpMethod;
+import com.joviansoft.android.core.net.JovianRequestListener;
 import com.joviansoft.android.core.JovianParameter;
 import com.joviansoft.android.domain.user.LoginResponse;
 import com.joviansoft.android.domain.user.LogoutResponse;
 import com.joviansoft.android.domain.user.UserInfo;
-import com.joviansoft.android.utils.Converter;
-import com.joviansoft.android.utils.JacsonJsonConverter;
+import com.joviansoft.android.core.serialize.Converter;
+import com.joviansoft.android.core.serialize.JacsonJsonConverter;
 
 /**
  * Created by bigbao on 14-3-25.
  */
 public class AccountService extends BaseService {
     private static final String USER_SERVICE_ROOT = API_ROOT_URL+ "user/";
-    protected Converter converter = new JacsonJsonConverter();
 
     public void login(String username, String password, JovianRequestListener<LoginResponse> listener) {
        // LoginRequest request = new LoginRequest();

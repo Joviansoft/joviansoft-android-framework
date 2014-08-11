@@ -3,16 +3,16 @@ package com.joviansoft.android.master;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.joviansoft.android.client.DefaultJoviansoftClient;
+import com.joviansoft.android.core.net.DefaultJoviansoftClient;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +42,15 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     private void testHandlerThread(){
+        Log.i("main thread id", "" + Thread.currentThread().getId());
         HandlerThread thread = new HandlerThread("Test");
         thread.start();
-        final Handler handler = new Handler(thread.getLooper(), new Handler.Callback() {
+        this.getMainLooper();
+        final Handler handler = new Handler(getMainLooper(), new Handler.Callback() {
             @Override
             public boolean handleMessage(Message msg) {
-                Log.i("MESSAGE", (String) msg.obj);
+
+                Log.i("callback thread id", "" + Thread.currentThread().getId());
                 return false;
             }
         });
@@ -55,6 +58,9 @@ public class MainActivity extends ActionBarActivity {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
+
+                Log.i("request thread id", "" + Thread.currentThread().getId());
+
                 Message msg = new Message();
                 msg.what = 0;
 

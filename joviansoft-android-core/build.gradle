@@ -2,17 +2,16 @@ apply plugin: 'android-library'
 
 repositories {
     mavenCentral()
-    maven { url 'http://repo.spring.io/libs-release' }
+    maven { url 'http://repo.spring.io/snapshot' }
 }
 android {
-    compileSdkVersion 18
-    buildToolsVersion "19.0.1"
-
+    compileSdkVersion 20
+    buildToolsVersion '20.0.0'
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 16
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
     }
     sourceSets {
         instrumentTest.setRoot('src/instrumentTest')
@@ -30,12 +29,16 @@ android {
         exclude 'META-INF/NOTICE'
         exclude 'META-INF/notice.txt'
     }
+    productFlavors {
+    }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:+'
     compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
-    compile 'com.google.http-client:google-http-client-android:1.17.0-rc'
+    //compile 'com.google.http-client:google-http-client-android:1.17.0-rc'
+    //  compile 'org.springframework.android:spring-android-rest-template:1.0.2.BUILD-SNAPSHOT'
+    //   compile 'org.springframework.android:spring-android-auth:1.0.2.BUILD-SNAPSHOT'
+    //   compile 'org.springframework.android:spring-android-core:1.0.2.BUILD-SNAPSHOT'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.1.1'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }

@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by bigbao on 14-3-27.
  */
-public class CodeOnlyResponse extends JovianResponse{
+public class CodeOnlyResponse extends JovianResponse {
 
     private static final long serialVersionUID = 4878861828223929733L;
     private int code;

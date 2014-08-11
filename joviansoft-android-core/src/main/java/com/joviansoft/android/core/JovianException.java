@@ -3,7 +3,7 @@ package com.joviansoft.android.core;
 /**
  * Created by bigbao on 14-3-12.
  */
-public class JovianException extends Exception{
+public class JovianException extends Exception {
     private int errorCode;
     private String errorMsg;
     private String subMsg;
@@ -46,8 +46,8 @@ public class JovianException extends Exception{
 
     @Override
     public String toString() {
-        String str =  "错误码:" + errorCode + "  " + "错误信息:" + errorMsg;
-        if(subMsg != null && !subMsg.equals("")){
+        String str = "错误码:" + errorCode + "  " + "错误信息:" + errorMsg;
+        if (subMsg != null && !subMsg.equals("")) {
             str += " 错误详细描述:" + subMsg;
         }
         return str;

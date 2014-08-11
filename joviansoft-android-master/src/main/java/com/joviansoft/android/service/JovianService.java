@@ -4,14 +4,14 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 
-import com.joviansoft.android.client.DefaultJoviansoftClient;
-import com.joviansoft.android.client.JovianRequestListener;
-import com.joviansoft.android.client.JoviansoftClient;
+import com.joviansoft.android.core.net.DefaultJoviansoftClient;
+import com.joviansoft.android.core.net.JovianRequestListener;
+import com.joviansoft.android.core.net.JoviansoftClient;
 import com.joviansoft.android.core.JovianException;
 import com.joviansoft.android.core.JovianRequest;
 import com.joviansoft.android.core.JovianResponse;
 import com.joviansoft.android.core.JovianParameter;
-import com.joviansoft.android.client.HttpMethod;
+import com.joviansoft.android.core.net.HttpMethod;
 
 /**
  * Created by bigbao on 14-3-25.

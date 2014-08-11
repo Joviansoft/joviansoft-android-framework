@@ -1,15 +1,10 @@
 package com.joviansoft.android.service;
 
-import com.joviansoft.android.client.HttpMethod;
-import com.joviansoft.android.client.JovianRequestListener;
+import com.joviansoft.android.core.net.HttpMethod;
+import com.joviansoft.android.core.net.JovianRequestListener;
 import com.joviansoft.android.core.CodeOnlyResponse;
 import com.joviansoft.android.core.JovianParameter;
-import com.joviansoft.android.core.JovianResponse;
-import com.joviansoft.android.domain.Message;
-import com.joviansoft.android.domain.gps.GpsBean;
 import com.joviansoft.android.domain.gps.GpsResponse;
-
-import java.util.List;
 
 /**
  * Created by bigbao on 14-3-26.

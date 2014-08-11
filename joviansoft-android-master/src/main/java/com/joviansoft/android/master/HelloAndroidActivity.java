@@ -7,38 +7,35 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.joviansoft.android.client.JovianRequestListener;
-import com.joviansoft.android.core.CodeOnlyResponse;
+import com.joviansoft.android.core.net.JovianRequestListener;
 import com.joviansoft.android.core.JovianException;
-import com.joviansoft.android.client.DefaultJoviansoftClient;
-import com.joviansoft.android.client.JoviansoftClient;
+import com.joviansoft.android.core.net.DefaultJoviansoftClient;
+import com.joviansoft.android.core.net.JoviansoftClient;
 import com.joviansoft.android.core.JovianResponse;
-import com.joviansoft.android.domain.Message;
 import com.joviansoft.android.domain.gps.GpsBean;
 import com.joviansoft.android.request.GetGpsRequest;
 import com.joviansoft.android.domain.gps.GpsResponse;
 import com.joviansoft.android.service.GpsService;
-import com.joviansoft.android.utils.Converter;
-import com.joviansoft.android.utils.JacsonJsonConverter;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.ViewById;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
-@EActivity(R.layout.master_main)
+//@EActivity(R.layout.master_main)
 public class HelloAndroidActivity extends Activity {
 
 
-	@ViewById
+    private static final String TAG = "HelloAndroidActivity";
+    //	@ViewById
 	TextView helloTextView;
 
 
-	@AfterViews
+//	@AfterViews
 	void afterViews() {
 
 		Date now = new Date();
@@ -70,18 +67,19 @@ public class HelloAndroidActivity extends Activity {
 
     private void testGpsService(){
         GpsService service = new GpsService();
+        Log.i(TAG, "main thread id " + Thread.currentThread().getId());
 
         service.getGps("123", new JovianRequestListener<GpsResponse>() {
             @Override
             public void onComplete(GpsResponse gpsResponse) {
                 Log.i("GPS-------------", gpsResponse.getTotal() + "");
                 Log.i("GPS-------------", gpsResponse.getGpsDataList().get(0).getX() + "");
-                Toast.makeText(HelloAndroidActivity.this, "xxxx", 10000).show();
+                Toast.makeText(HelloAndroidActivity.this, "xxxx", Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onApiExceptions(JovianException exception) {
-                Toast.makeText(HelloAndroidActivity.this, exception.getErrorMsg() +"错误", 10000).show();
+                Toast.makeText(HelloAndroidActivity.this, exception.getErrorMsg() +"错误", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -93,14 +91,14 @@ public class HelloAndroidActivity extends Activity {
             @Override
             public void onComplete(JovianResponse object) {
                 if(object == null)
-                    Toast.makeText(HelloAndroidActivity.this, "返回空对象", 100000).show();
+                    Toast.makeText(HelloAndroidActivity.this, "返回空对象", Toast.LENGTH_LONG).show();
                 else
-                    Toast.makeText(HelloAndroidActivity.this, "不是空对象", 100000).show();
+                    Toast.makeText(HelloAndroidActivity.this, "不是空对象", Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onApiExceptions(JovianException exception) {
-                Toast.makeText(HelloAndroidActivity.this, exception.getErrorMsg(), 100000).show();
+                Toast.makeText(HelloAndroidActivity.this, exception.getErrorMsg(), Toast.LENGTH_LONG).show();
             }
         });
 //        gpsUpload.uploadGps("111", gpsBeanList, new JovianRequestListener<GpsResponse>() {
@@ -172,7 +170,7 @@ public class HelloAndroidActivity extends Activity {
             @Override
             public boolean handleMessage(android.os.Message msg) {
                 Log.i("MESSAGE", (String) msg.obj);
-                Toast.makeText(HelloAndroidActivity.this, (String)msg.obj, 3000).show();
+                Toast.makeText(HelloAndroidActivity.this, (String)msg.obj, Toast.LENGTH_LONG).show();
                 helloTextView.setText("12345");
 
                 return true;

@@ -19,7 +19,7 @@ public class SystemParameterNames {
     //应用键的默认参数名
     private static final String APP_KEY = "appKey";
 
-     //签名的默认参数名
+    //签名的默认参数名
     private static final String SIGN = "sign";
 
     //时间戳参数名

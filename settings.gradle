@@ -1,1 +1,1 @@
-include ':joviansoft-android-master', ':joviansoft-android-core'
+include ':joviansoft-android-master', ':joviansoft-android-core', ':joviansoft-framework-ui'

@@ -5,6 +5,7 @@
 package com.joviansoft.android.utils;
 
 import com.joviansoft.android.core.JovianException;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
@@ -27,7 +28,7 @@ public class SignUtil {
      * @param secret
      * @return
      */
-    public static String sign(Map<String, String> params, String secret) throws JovianException{
+    public static String sign(Map<String, String> params, String secret) throws JovianException {
         return sign(params, null, secret);
     }
 
